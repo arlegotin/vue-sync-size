@@ -118,6 +118,7 @@ class Observers {
     }
   }
 }
+
 function index () {
   const observers = new Observers();
   return {

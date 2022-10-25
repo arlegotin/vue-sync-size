@@ -1,5 +1,4 @@
-import resolve from '@rollup/plugin-node-resolve';
-import pkg from './package.json';
+import resolve from '@rollup/plugin-node-resolve'
 import babel from '@rollup/plugin-babel'
 
 const extensions = ['.js']
@@ -9,11 +8,11 @@ export default [
     input: 'src/index.js',
     output: [
       {
-        file: pkg.main,
+        file: 'dist/index.cjs.js',
         format: 'cjs',
       },
       {
-        file: pkg.module,
+        file: 'dist/index.es.js',
         format: 'es',
       },
     ],
