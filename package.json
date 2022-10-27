@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "vue-sync-size",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue directive which allows to synchronize element sizes",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -25,6 +25,8 @@
     "vue",
     "element",
     "size",
+    "width",
+    "height",
     "resize",
     "observe",
     "observer",
