@@ -23,8 +23,14 @@ app.directive('sync', VueSyncSize())
 ```
 
 ### Call in component
-Directive syntax is pretty straightforward:
-`v-sync:[side]="reference"`, where `side` is optional and can be either `width`, `height` or `both`:
+Directive syntax is pretty straightforward: `v-sync:[side]="reference"`:
+```vue
+<template>
+  <div ref="reference">Reference element</div>
+  <div v-sync:width="reference">This element will have same width as reference</div>
+</template>
+```
+`side` is optional and can be either `width`, `height` or `both`:
 ```vue
 <template>
   <div ref="reference">Reference element</div>
