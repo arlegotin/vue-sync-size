@@ -1,6 +1,6 @@
 # 📐 vue-sync-size
 
-Vue 3 directive which allows to synchronize element sizes.
+Vue directive which allows to synchronize element sizes.
 
 ## Installation
 
@@ -22,7 +22,7 @@ import VueSyncSize from 'vue-sync-size'
 app.directive('sync', VueSyncSize())
 ```
 
-### Usage in component
+### Call in component
 Directive syntax is pretty straightforward:
 `v-sync:[side]="reference"`, where `side` is optional and can be either `width`, `height` or `both`:
 ```vue
@@ -53,6 +53,12 @@ It's also possible to sync element sizes with different elements:
   <div ref="reference-b"></div>
   <div v-sync:width="reference-a" v-sync:height="reference-b"></div>
 </template>
+```
+
+## Vue 2 support
+By default the directive is created for Vue 3. Add `version: 2` parameter to enable Vue 2 support:
+```js
+Vue.directive('sync', VueSyncSize({ version: 2 }))
 ```
 
 ## Dependencies
