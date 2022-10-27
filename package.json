@@ -42,6 +42,6 @@
   },
   "homepage": "https://github.com/arlegotin/vue-sync-size#readme",
   "dependencies": {
-    "element-size-observer": "^1.0.1"
+    "element-size-observer": "^1.0.2"
   }
 }
