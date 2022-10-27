@@ -2,13 +2,16 @@
   "type": "module",
   "name": "vue-sync-size",
   "version": "1.0.0",
-  "description": "Vue directive to synchronize element sizes",
+  "description": "Vue directive which allows to synchronize element sizes",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@rollup/plugin-babel": "^6.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "mocha": "^10.1.0",
-    "rollup": "^2.79.1"
+    "rollup": "^2.79.1",
+    "rollup-plugin-babel": "^4.4.0"
   },
   "scripts": {
     "build": "rollup -c",
@@ -19,12 +22,16 @@
     "url": "git+https://github.com/arlegotin/vue-sync-size.git"
   },
   "keywords": [
+    "vue",
     "element",
     "size",
     "resize",
+    "observe",
+    "observer",
     "sync",
-    "vue",
-    "directive"
+    "synchronize",
+    "directive",
+    "ResizeObserver"
   ],
   "author": "Artem Legotin <hello@artemlegotin.com>",
   "license": "ISC",
@@ -33,6 +40,6 @@
   },
   "homepage": "https://github.com/arlegotin/vue-sync-size#readme",
   "dependencies": {
-    "element-size-observer": "^1.0.0"
+    "element-size-observer": "^1.0.1"
   }
 }
