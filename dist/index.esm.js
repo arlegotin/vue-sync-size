@@ -68,23 +68,23 @@ class Observers {
       return;
     }
     if (!this.items[referenceElement]) {
-      const observer = new ElementSizeObserver({
-        element: referenceElement
-      });
       const observing = {};
-      observer.on(SizeObserver.EVENT_SIZE_CHANGED, () => {
-        for (const someSide of observing[observingElement]) {
-          if (someSide === Observers.SIDE_BOTH || someSide === Observers.SIDE_WIDTH) {
-            observingElement.style.width = `${referenceElement.offsetWidth}px`;
-          }
-          if (someSide === Observers.SIDE_BOTH || someSide === Observers.SIDE_HEIGHT) {
-            observingElement.style.height = `${referenceElement.offsetHeight}px`;
+      const observer = new ElementSizeObserver({
+        element: referenceElement,
+        onResize: () => {
+          for (const someSide of observing[observingElement]) {
+            if (someSide === Observers.SIDE_BOTH || someSide === Observers.SIDE_WIDTH) {
+              observingElement.style.width = `${referenceElement.offsetWidth}px`;
+            }
+            if (someSide === Observers.SIDE_BOTH || someSide === Observers.SIDE_HEIGHT) {
+              observingElement.style.height = `${referenceElement.offsetHeight}px`;
+            }
           }
         }
       });
       this.items[referenceElement] = {
-        observer,
-        observing
+        observing,
+        observer
       };
     }
     if (!this.items[referenceElement].observing[observingElement]) {
