@@ -26,18 +26,18 @@ app.directive('sync', VueSyncSize())
 Directive syntax is pretty straightforward: `v-sync:[side]="reference"`:
 ```vue
 <template>
-  <div ref="reference">Reference element</div>
-  <div v-sync:width="reference">This element will have same width as reference</div>
+  <div ref="a">Reference element</div>
+  <div v-sync:width="$refs.a">This element will have same width as reference</div>
 </template>
 ```
 `side` is optional and can be either `width`, `height` or `both`:
 ```vue
 <template>
-  <div ref="reference">Reference element</div>
-  <div v-sync:width="reference">This element will have same width as reference</div>
-  <div v-sync:height="reference">This element will have same height as reference</div>
-  <div v-sync="reference">This element will have same width and height as reference</div>
-  <div v-sync:both="reference">Same as a `v-sync` without argument</div>
+  <div ref="a">Reference element</div>
+  <div v-sync:width="$refs.a">This element will have same width as reference</div>
+  <div v-sync:height="$refs.a">This element will have same height as reference</div>
+  <div v-sync="$refs.a">This element will have same width and height as reference</div>
+  <div v-sync:both="$refs.a">Same as a `v-sync` without argument</div>
 </template>
 ```
 Absence of `side` works the same way as `both`.
@@ -46,8 +46,8 @@ Absence of `side` works the same way as `both`.
 The `reference` can be not only an element but also a component:
 ```vue
 <template>
-  <some-component ref="reference"/>
-  <div v-sync:width="reference"></div>
+  <some-component ref="a"/>
+  <div v-sync:width="$refs.a"></div>
 </template>
 ```
 
@@ -55,9 +55,9 @@ The `reference` can be not only an element but also a component:
 It's also possible to sync element sizes with different elements:
 ```vue
 <template>
-  <div ref="reference-a"></div>
-  <div ref="reference-b"></div>
-  <div v-sync:width="reference-a" v-sync:height="reference-b"></div>
+  <div ref="a"></div>
+  <div ref="b"></div>
+  <div v-sync:width="$refs.a" v-sync:height="$refs.b"></div>
 </template>
 ```
 
